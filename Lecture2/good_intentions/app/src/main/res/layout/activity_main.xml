@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:text="Good Intentions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPictureAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:text="Take a Picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
+
+    <Button
+        android:id="@+id/btnVideoAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="54dp"
+        android:text="Record a Video"
+        app:layout_constraintStart_toStartOf="@+id/btnPictureAction"
+        app:layout_constraintTop_toBottomOf="@+id/btnPictureAction" />
+
+    <Button
+        android:id="@+id/btnEmailAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="10dp"
+        android:text="Send A Email"
+        app:layout_constraintEnd_toEndOf="@+id/btnVideoAction"
+        app:layout_constraintTop_toBottomOf="@+id/btnVideoAction" />
+
+    <Button
+        android:id="@+id/btnSmsAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Send a SMS"
+        app:layout_constraintEnd_toEndOf="@+id/btnEmailAction"
+        app:layout_constraintTop_toBottomOf="@+id/btnEmailAction" />
+
+    <Button
+        android:id="@+id/btnPhoneCallAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="25dp"
+        android:text="Make a Call"
+        app:layout_constraintStart_toStartOf="@+id/btnSmsAction"
+        app:layout_constraintTop_toBottomOf="@+id/btnSmsAction" />
+
+    <Button
+        android:id="@+id/btnAlarmAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="63dp"
+        android:text="Set Alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnPhoneCallAction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
