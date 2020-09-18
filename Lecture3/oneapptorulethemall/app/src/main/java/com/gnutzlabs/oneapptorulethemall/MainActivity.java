@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,53 +14,55 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
-implements SearchDialogFragment.SearchDialogListener {
+implements SearchDialogFragment.SearchDialogListener , ActivityMetaDataAdapter.IActivityMetaDataItemClickedListener {
 
     TextView txtHeading;
-    Button btnPicker;
-    Button btnEditText;
-    Button btnSliders;
+    RecyclerView rcvList;
+    ActivityMetaDataAdapter adapter;
+
+    ArrayList<ActivityMetaData> activites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtHeading = findViewById(R.id.txtHeading);
-        btnPicker = findViewById(R.id.btnPicker);
-        btnEditText = findViewById(R.id.btnEditText);
-        btnSliders = findViewById(R.id.btnSliders);
+        adapter = new ActivityMetaDataAdapter(this);
+        rcvList = findViewById(R.id.rcvActivities);
+        rcvList.setLayoutManager(new LinearLayoutManager(this));
+        rcvList.setAdapter(adapter);
+        
+        createData();
+        adapter.updateActivitiesList(activites);
 
-        btnPicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
 
-                launchPickerActivity();
+    private void createData() {
+        activites = new ArrayList<ActivityMetaData>();
+        activites.add(new ActivityMetaData(1, 1, "Picker", "This activity lets you select and return a number"));
+        activites.add(new ActivityMetaData(2, 2, "Edit", "This activity input a range of strings and returns the collection"));
+        activites.add(new ActivityMetaData(3, 3, "Slider", "Lets you select and returns the background rbg value"));
+    }
 
-            }
-        });
+    private void launchSlidersActivity() {
+        startActivityForResult(new Intent(getApplicationContext(), SlidersActivity.class), Constants.SLIDERS_REQUEST);
+    }
 
-        btnEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(getApplicationContext(), EditTextActivity.class), Constants.EDIT_TEXT_REQUEST);
-            }
-        });
+    private void launchEditActivity() {
+        startActivityForResult(new Intent(getApplicationContext(), EditTextActivity.class), Constants.EDIT_TEXT_REQUEST);
+    }
 
-        btnSliders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(getApplicationContext(), SlidersActivity.class), Constants.SLIDERS_REQUEST);
-            }
-        });
-
+    void launchPickerActivity(){
+        startActivityForResult(new Intent(this, PickerActivity.class), Constants.PICKER_REQUST);
     }
 
     @Override
@@ -81,10 +85,6 @@ implements SearchDialogFragment.SearchDialogListener {
     private void launchSearchDialog() {
         SearchDialogFragment searchDialog = new SearchDialogFragment();
         searchDialog.show(getSupportFragmentManager(), "search dialog");
-    }
-
-    void launchPickerActivity(){
-        startActivityForResult(new Intent(this, PickerActivity.class), Constants.PICKER_REQUST);
     }
 
     @Override
@@ -122,6 +122,21 @@ implements SearchDialogFragment.SearchDialogListener {
     @Override
     public void submitSearch(String searchTerm) {
         makeToast("You made a search for:" + searchTerm);
+    }
+
+    @Override
+    public void onActivityMetadataClicked(int index) {
+        switch (index){
+            case 0:
+                launchPickerActivity();
+                break;
+            case 1:
+                launchEditActivity();
+                break;
+            case 2:
+                launchSlidersActivity();
+                break;
+        }
     }
 }
 
