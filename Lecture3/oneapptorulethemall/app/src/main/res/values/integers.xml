@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="min">0</integer>
+    <integer name="max_val">1000</integer>
+    <integer name="default_progress">500</integer>
+    <integer name="rgbMax">255</integer>
+    <integer name="initialRgbProgress">255</integer>
+</resources>
