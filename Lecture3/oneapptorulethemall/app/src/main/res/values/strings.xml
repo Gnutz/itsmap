@@ -11,4 +11,7 @@
     <string name="number">Number</string>
     <string name="password">Password</string>
     <string name="tag_Sliders">Sliders</string>
+    <string name="search">Search</string>
+    <string name="search_message">Enter a search term</string>
+    <string name="search_title">Make a search:</string>
 </resources>

@@ -1,11 +1,16 @@
 package com.gnutzlabs.oneapptorulethemall;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +18,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+implements SearchDialogFragment.SearchDialogListener {
 
     TextView txtHeading;
     Button btnPicker;
@@ -55,6 +61,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.miSearch:
+                launchSearchDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void launchSearchDialog() {
+        SearchDialogFragment searchDialog = new SearchDialogFragment();
+        searchDialog.show(getSupportFragmentManager(), "search dialog");
+    }
+
     void launchPickerActivity(){
         startActivityForResult(new Intent(this, PickerActivity.class), Constants.PICKER_REQUST);
     }
@@ -89,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
 
     void makeToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void submitSearch(String searchTerm) {
+        makeToast("You made a search for:" + searchTerm);
     }
 }
 
