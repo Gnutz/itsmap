@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="magin_small">16</dimen>
+    <dimen name="magin_medium">32</dimen>
+    <dimen name="margin_large">64</dimen>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Corona Tracker</string>
+    <string name="exit">Exit</string>
+    <string name="bold">bold</string>
+    <string name="cases">Cases: </string>
+    <string name="deaths">Deaths: </string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="user_rating">User Rating:</string>
+    <string name="user_notes">User notes:</string>
+    <string name="note_hint">Enter a note here</string>
+    <string name="dev_note_standin">XXX XX XXXXXX XXXX XX XXXXXX XX X. XXXX XX XXXXXX XXXXXXX XX X</string>
+</resources>

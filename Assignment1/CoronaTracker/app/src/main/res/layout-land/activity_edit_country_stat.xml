@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditContryStatActivity">
+
+    <ImageView
+        android:id="@+id/imgEditFlagIcon"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magin_medium"
+        android:layout_marginTop="@dimen/magin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/dk" />
+
+    <TextView
+        android:id="@+id/txtEditCountryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magin_medium"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEditFlagIcon"
+        app:layout_constraintStart_toEndOf="@+id/imgEditFlagIcon"
+        app:layout_constraintTop_toTopOf="@+id/imgEditFlagIcon"
+        tools:text="Denmark" />
+
+    <TextView
+        android:id="@+id/txtEditUserRatingHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/user_rating"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/imgEditFlagIcon"
+        app:layout_constraintTop_toBottomOf="@+id/imgEditFlagIcon" />
+
+    <TextView
+        android:id="@+id/txtEditUserRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEditUserRatingHeading"
+        app:layout_constraintStart_toEndOf="@+id/txtEditUserRatingHeading"
+        app:layout_constraintTop_toTopOf="@+id/txtEditUserRatingHeading"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="7.5" />
+
+    <SeekBar
+        android:id="@+id/skbUserRating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magin_medium"
+        android:layout_marginTop="@dimen/magin_medium"
+        app:layout_constraintEnd_toEndOf="@+id/txtEditUserRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditUserRatingHeading" />
+
+    <TextView
+        android:id="@+id/txtEditUserNotesHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:text="@string/user_notes"
+        app:layout_constraintStart_toEndOf="@+id/txtEditUserRating"
+        app:layout_constraintTop_toTopOf="@+id/txtEditUserRating" />
+
+    <EditText
+        android:id="@+id/editTxtUserNotes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="@dimen/magin_medium"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/note_hint"
+        android:inputType="textShortMessage|textMultiLine|textCapSentences"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtEditUserNotesHeading"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditUserNotesHeading"
+        tools:text="@string/dev_note_standin" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magin_medium"
+        android:layout_marginBottom="@dimen/magin_medium"
+        android:text="@android:string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/magin_medium"
+        android:layout_marginBottom="@dimen/magin_medium"
+        android:text="@android:string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
