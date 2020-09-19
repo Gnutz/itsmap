@@ -10,7 +10,7 @@
         android:id="@+id/imgDetailFlagIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/magin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,10 +18,10 @@
         tools:srcCompat="@drawable/dk" />
 
     <TextView
-        android:id="@+id/txtCDetailountryName"
+        android:id="@+id/txtCDetailCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/magin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,11 +33,11 @@
         android:id="@+id/txtDetailCasesHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/magin_medium"
-        android:layout_marginTop="@dimen/magin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         android:text="@string/cases"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCDetailountryName" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCDetailCountryName" />
 
     <TextView
         android:id="@+id/txtDetailCases"
@@ -78,7 +78,7 @@
         android:id="@+id/txtDetailUserRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/magin_small"
+        android:layout_marginStart="@dimen/margin_small"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/txtDetailUserRatingHeading"
         app:layout_constraintTop_toTopOf="@+id/txtDetailUserRatingHeading"
@@ -95,7 +95,7 @@
         android:id="@+id/txtDetailUserNotesHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/magin_small"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/user_notes"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/txtDetailUserRatingHeading"
@@ -106,8 +106,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="@dimen/magin_medium"
-        android:layout_marginBottom="@dimen/magin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/txtDetailUserNotesHeading"
@@ -118,8 +118,8 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/magin_medium"
-        android:layout_marginBottom="@dimen/magin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -128,8 +128,8 @@
         android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/magin_medium"
-        android:layout_marginBottom="@dimen/magin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

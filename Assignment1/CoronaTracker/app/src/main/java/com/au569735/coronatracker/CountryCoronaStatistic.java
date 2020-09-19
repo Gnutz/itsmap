@@ -1,6 +1,8 @@
 package com.au569735.coronatracker;
 
-public class CountryCoronaStatistic {
+import java.io.Serializable;
+
+public class CountryCoronaStatistic implements Serializable {
 
     String Country;
     String CountryCode;
@@ -10,12 +12,12 @@ public class CountryCoronaStatistic {
     double UserRating;
     String UserNote;
 
-    public CountryCoronaStatistic(String country, String code, int iconId, int cases, double rating, String note){
+    public CountryCoronaStatistic(String country, String code, int iconId, int cases, int deaths, double rating, String note){
         Country = country;
         CountryCode = code;
         FlagIconId = iconId;
         NumberOfCases = cases;
-        NumberOfDeaths = cases;
+        NumberOfDeaths = deaths;
         UserRating = rating;
         UserNote = note;
 

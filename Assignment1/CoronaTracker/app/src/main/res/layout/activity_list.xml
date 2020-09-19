@@ -7,22 +7,20 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvStatistics"
-        android:layout_width="361dp"
+        android:layout_width="360dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/magin_small"
-        android:layout_marginTop="@dimen/magin_small"
-        android:layout_marginBottom="@dimen/magin_medium"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_medium"
         app:layout_constraintBottom_toTopOf="@+id/btnExit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="6"
-        tools:listitem="@layout/list_country_stat_item" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/magin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
