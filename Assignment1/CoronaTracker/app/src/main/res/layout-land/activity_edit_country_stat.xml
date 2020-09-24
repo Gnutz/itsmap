@@ -32,11 +32,11 @@
         android:id="@+id/txtEditUserRatingHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/user_rating"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/imgEditFlagIcon"
-        app:layout_constraintTop_toBottomOf="@+id/imgEditFlagIcon" />
+        app:layout_constraintBottom_toTopOf="@+id/skbUserRating"
+        app:layout_constraintStart_toStartOf="@+id/imgEditFlagIcon" />
 
     <TextView
         android:id="@+id/txtEditUserRating"
@@ -55,19 +55,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
         app:layout_constraintEnd_toEndOf="@+id/txtEditUserRating"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEditUserRatingHeading" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtEditUserNotesHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
         android:text="@string/user_notes"
         app:layout_constraintStart_toEndOf="@+id/txtEditUserRating"
-        app:layout_constraintTop_toTopOf="@+id/txtEditUserRating" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTxtUserNotes"

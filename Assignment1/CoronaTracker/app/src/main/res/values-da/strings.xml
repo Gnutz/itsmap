@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Corona Tracker</string>
+    <string name="exit">Afslut</string>
+    <string name="cases">Tilfælde:</string>
+    <string name="deaths">Dødsfald:</string>
+    <string name="back">Tilbage</string>
+    <string name="edit">Rediger</string>
+    <string name="user_rating">Vurdering:</string>
+    <string name="user_notes">Bruger noter:</string>
+    <string name="note_hint">Tilføj en note her</string>
+</resources>

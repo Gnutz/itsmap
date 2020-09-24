@@ -1,6 +1,8 @@
 package com.au569735.coronatracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +11,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.au569735.coronatracker.Constants.REQUEST_EDIT;
+
 public class CountryDetailsActivity extends AppCompatActivity {
 
     ImageView imgFlagIcon;
     TextView txtCountry, txtCases, txtDeaths, txtRating, txtNotes;
     Button btnBack, btnEdit;
 
-    CountryCoronaStatistic countryCoronaStatistic;
+    CountryStatisticViewModel vm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_details);
+
+        vm = new ViewModelProvider(this).get(CountryStatisticViewModel.class);
+        vm.getCountryStatistic().observe(this, new Observer<CountryStatistic>() {
+            @Override
+            public void onChanged(CountryStatistic newStats) {
+                    updateUI(newStats);
+            }
+        });
 
         imgFlagIcon = findViewById(R.id.imgDetailFlagIcon);
         txtCountry = findViewById(R.id.txtCDetailCountryName);
@@ -30,13 +42,14 @@ public class CountryDetailsActivity extends AppCompatActivity {
         txtNotes = findViewById(R.id.txtDetailUserNotes);
 
         Intent passedIntent = getIntent();
-        countryCoronaStatistic = (CountryCoronaStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
-        updateUI();
+       CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
+       vm.updateCountryStatistic(countryStatistic);
 
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_CANCELED);
                 finish();
             }
         });
@@ -45,20 +58,22 @@ public class CountryDetailsActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                Intent intent = new Intent(getApplication(), EditContryStatActivity.class);
-               intent.putExtra(Constants.STAT_BLOCK, countryCoronaStatistic);
+               intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic().getValue());
+               intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                startActivity(intent);
                finish();
             }
         });
     }
 
-    private void updateUI() {
-        imgFlagIcon.setImageResource(countryCoronaStatistic.FlagIconId);
-        txtCountry.setText(countryCoronaStatistic.Country);
-        txtCases.setText(""+countryCoronaStatistic.NumberOfCases);
-        txtDeaths.setText(""+countryCoronaStatistic.NumberOfDeaths);
-        txtRating.setText(""+ countryCoronaStatistic.UserRating);
-        txtNotes.setText(countryCoronaStatistic.UserNote);
+    private void updateUI(CountryStatistic stats) {
+        imgFlagIcon.setImageResource(stats.FlagIconId);
+        txtCountry.setText(stats.Country);
+        txtCases.setText(""+ stats.Cases);
+        txtDeaths.setText(""+ stats.Deaths);
+        txtRating.setText(String.format("%.1f", stats.Rating));
+        txtNotes.setText(stats.Note);
     }
 }

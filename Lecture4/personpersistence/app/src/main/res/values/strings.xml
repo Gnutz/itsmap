@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Person Persistence</string>
+    <string name="title">Saving Ryan</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="age">Age</string>
+    <string name="phoneNumber">Phone Number</string>
+</resources>

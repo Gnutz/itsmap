@@ -1,61 +1,77 @@
 package com.au569735.coronatracker;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity
-implements CountryCoronaStatisticAdapter.ICountryCoronaStatisticItemClickedListener {
+implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
+
 
 
     RecyclerView rcvCountryStats;
     Button btnExit;
-    CountryCoronaStatisticAdapter adapter;
+    CountryStatisticAdapter adapter;
 
-    ArrayList<CountryCoronaStatistic> countryCoronaStatistics;
+    CountryStatisticListViewModel vm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        adapter = new CountryCoronaStatisticAdapter(this);
+        adapter = new CountryStatisticAdapter(this);
         rcvCountryStats = findViewById(R.id.rcvStatistics);
         rcvCountryStats.setLayoutManager(new LinearLayoutManager(this));
         rcvCountryStats.setAdapter(adapter);
 
-        createData();
-        adapter.updateCStatistics(countryCoronaStatistics);
+        vm =  new ViewModelProvider(this).get(CountryStatisticListViewModel.class);
+        vm.getStatisticsLiveData().observe(this, new Observer<ArrayList<CountryStatistic>>() {
+            @Override
+            public void onChanged(ArrayList<CountryStatistic> countryStatistics) {
+                adapter.updateCStatistics(countryStatistics);
+            }
+        });
 
+        btnExit = findViewById(R.id.btnExit);
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
-    private void createData() {
-        countryCoronaStatistics = new ArrayList<CountryCoronaStatistic>();
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Canada", "CA", R.drawable.ca, 142866, 9248, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("China", "CN", R.drawable.cn, 90294, 4736, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Denmark","DK", R.drawable.dk, 21836,635, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Germany", "DE",R.drawable.de,269048, 9376, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Finland", "FI", R.drawable.fi,8799, 339, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("India", "IN", R.drawable.in, 5118253,83198, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Japan", "JP",R.drawable.jp,77488, 1490, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Norway", "NO", R.drawable.no,12644,266, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Russian", "RU", R.drawable.ru,1081152,18996, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("Sweden","SE", R.drawable.se,87885,5864, 0.0, ""));
-       countryCoronaStatistics.add( new CountryCoronaStatistic("USA", "US", R.drawable.us ,6674411,197633, 0.0, ""));
-    }
 
     @Override
     public void onStatItemClicked(int index) {
-        Intent intent = new Intent(getApplicationContext(), CountryDetailsActivity.class);
-        intent.putExtra(Constants.STAT_BLOCK, countryCoronaStatistics.get(index));
-        startActivity(intent);
+        launchDetailsActivity(index);
+    }
+
+    void launchDetailsActivity(int index){
+        Intent intent = new Intent(this, CountryDetailsActivity.class);
+        intent.putExtra(Constants.STAT_BLOCK, vm.getStatisticsLiveData().getValue().get(index));
+        startActivityForResult(intent, Constants.REQUEST_EDIT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK){
+            vm.updateStatistic((CountryStatistic) data.getSerializableExtra(Constants.STAT_BLOCK));
+        }
+
     }
 }
