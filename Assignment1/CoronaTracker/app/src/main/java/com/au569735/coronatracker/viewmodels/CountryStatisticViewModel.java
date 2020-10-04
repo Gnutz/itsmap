@@ -22,15 +22,17 @@ public class CountryStatisticViewModel extends ViewModel {
     public CountryStatistic getCountryStatistic(){
         if(getCountryStatisticLiveData().getValue() == null){
             // bit hacky solution I know
-            countryStatistic.setValue(new CountryStatistic("", "", -1, 0, 0, 0.0, ""));
+           return  null;
         }
         return new CountryStatistic(getCountryStatisticLiveData().getValue());
     }
 
     public void updateCountryStatistic(CountryStatistic countryStatistic) {
-        if (!countryStatistic.equals( getCountryStatistic())) {
+        CountryStatistic currentStats = getCountryStatistic();
+        if (!countryStatistic.equals(currentStats)) {
             this.countryStatistic.setValue(countryStatistic);
         }
+        currentStats = getCountryStatistic();
     }
 
 

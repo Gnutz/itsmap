@@ -44,9 +44,11 @@ public class CountryDetailsActivity extends AppCompatActivity {
         txtRating = findViewById(R.id.txtDetailUserRating);
         txtNotes = findViewById(R.id.txtDetailUserNotes);
 
-        Intent passedIntent = getIntent();
-       CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
-       vm.updateCountryStatistic(countryStatistic);
+        if(vm.getCountryStatistic() == null ) {
+            Intent passedIntent = getIntent();
+            CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
+            vm.updateCountryStatistic(countryStatistic);
+        }
 
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {

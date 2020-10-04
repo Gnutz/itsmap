@@ -53,9 +53,12 @@ public class CountryEditActivity extends AppCompatActivity {
             }
         });
 
-        Intent passedIntent = getIntent();
-        CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
-        vm.updateCountryStatistic(stats);
+
+        if (vm.getCountryStatistic() == null) {
+            Intent passedIntent = getIntent();
+            CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
+            vm.updateCountryStatistic(stats);
+        }
 
 
         skbRating = findViewById(R.id.skbUserRating);
@@ -79,7 +82,7 @@ public class CountryEditActivity extends AppCompatActivity {
             }
         });
 
-        editTxtNote.addTextChangedListener(new TextWatcher() {
+        /*editTxtNote.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -96,7 +99,7 @@ public class CountryEditActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        }); */
 
         // hide keyboard when editText loses focus
         // #1: set OnFocusChangedListener for the input field
@@ -105,7 +108,11 @@ public class CountryEditActivity extends AppCompatActivity {
         editTxtNote.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-
+                if (!hasFocus) {
+                    CountryStatistic stats = vm.getCountryStatistic();
+                    stats.Note = editTxtNote.getText().toString();
+                    vm.updateCountryStatistic(stats);
+                }
             }
         });
 
@@ -156,4 +163,5 @@ public class CountryEditActivity extends AppCompatActivity {
         }
         return super.dispatchTouchEvent(event);
     }
+
 }
