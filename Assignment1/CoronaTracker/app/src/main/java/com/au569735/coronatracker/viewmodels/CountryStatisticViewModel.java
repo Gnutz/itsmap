@@ -20,7 +20,11 @@ public class CountryStatisticViewModel extends ViewModel {
     }
 
     public CountryStatistic getCountryStatistic(){
-        return getCountryStatisticLiveData().getValue();
+        if(getCountryStatisticLiveData().getValue() == null){
+            // bit hacky solution I know
+            countryStatistic.setValue(new CountryStatistic("", "", -1, 0, 0, 0.0, ""));
+        }
+        return new CountryStatistic(getCountryStatisticLiveData().getValue());
     }
 
     public void updateCountryStatistic(CountryStatistic countryStatistic) {
