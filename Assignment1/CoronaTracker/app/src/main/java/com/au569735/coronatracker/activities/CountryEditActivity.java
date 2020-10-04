@@ -79,6 +79,25 @@ public class CountryEditActivity extends AppCompatActivity {
             }
         });
 
+        editTxtNote.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    CountryStatistic stats = vm.getCountryStatistic();
+                    stats.Note = s.toString();
+                    vm.updateCountryStatistic(stats);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         // hide keyboard when editText loses focus
         // #1: set OnFocusChangedListener for the input field
         // #2 Override the activity's DispatchTouchEvent method see below
@@ -86,11 +105,7 @@ public class CountryEditActivity extends AppCompatActivity {
         editTxtNote.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus) {
-                    CountryStatistic stats = vm.getCountryStatistic();
-                    stats.Note = editTxtNote.getText().toString();
-                    vm.updateCountryStatistic(stats);
-                }
+
             }
         });
 
