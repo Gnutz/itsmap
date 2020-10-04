@@ -14,6 +14,11 @@ import com.au569735.coronatracker.model.CountryStatistic;
 
 import java.util.ArrayList;
 
+/* reference */
+// The implementation of this adaptor is adapted from the code shown in the video "Demo 2: RecyclerView in action"
+// from the lecture "L3: Android UI". The video can be found on blackboard.au.dk.
+// This implementation follows the implementation in the video closely.
+
 public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatisticAdapter.CountyStatisticViewHolder> {
 
 
@@ -40,8 +45,7 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
     public CountyStatisticViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view;
        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_country_stat_item, parent, false);
-       CountyStatisticViewHolder viewHolder = new CountyStatisticViewHolder(view, listener);
-       return viewHolder;
+        return new CountyStatisticViewHolder(view, listener);
     }
 
     @Override

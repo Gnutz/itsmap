@@ -29,7 +29,7 @@ public class CountryEditActivity extends AppCompatActivity {
     ImageView imgFlagIcon;
     TextView txtCountry, txtRating;
     SeekBar skbRating;
-    EditText etxtNote;
+    EditText editTxtNote;
     Button btnCancel, btnOk;
 
     CountryStatisticViewModel vm;
@@ -42,10 +42,9 @@ public class CountryEditActivity extends AppCompatActivity {
         imgFlagIcon = findViewById(R.id.imgEditFlagIcon);
         txtCountry = findViewById(R.id.txtEditCountryName);
         txtRating = findViewById(R.id.txtEditUserRating);
-        skbRating = findViewById(R.id.skbUserRating);
 
         vm = new ViewModelProvider(this).get(CountryStatisticViewModel.class);
-        vm.getCountryStatistic().observe(this, new Observer<CountryStatistic>() {
+        vm.getCountryStatisticLiveData().observe(this, new Observer<CountryStatistic>() {
             @Override
             public void onChanged(CountryStatistic countryStatistic) {
                 updateUI(countryStatistic);
@@ -56,12 +55,13 @@ public class CountryEditActivity extends AppCompatActivity {
         CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
         vm.updateCountryStatistic(stats);
 
+
         skbRating = findViewById(R.id.skbUserRating);
-        skbRating.setProgress((int) vm.getCountryStatistic().getValue().Rating *10);
+        skbRating.setProgress((int) vm.getCountryStatistic().Rating * 10);
         skbRating.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                CountryStatistic stats = vm.getCountryStatistic().getValue();
+                CountryStatistic stats = vm.getCountryStatistic();
                 stats.Rating = (float) progress/10;
                 vm.updateCountryStatistic(stats);
             }
@@ -77,9 +77,8 @@ public class CountryEditActivity extends AppCompatActivity {
             }
         });
 
-        etxtNote = findViewById(R.id.editTxtUserNotes);
-
-       etxtNote.addTextChangedListener(new TextWatcher() {
+        editTxtNote = findViewById(R.id.editTxtUserNotes);
+        editTxtNote.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -91,19 +90,18 @@ public class CountryEditActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                CountryStatistic stats = vm.getCountryStatistic().getValue();
+                CountryStatistic stats = vm.getCountryStatistic();
                 stats.Note = s.toString();
                 vm.updateCountryStatistic(stats);
 
             }
         });
 
-        // hide keyboard when editText
+        // hide keyboard when editText loses focus
         // #1: set OnFocusChangedListener for the input field
         // #2 Override the activity's DispatchTouchEvent method see below
         // snippets copied from https://stackoverflow.com/questions/4165414/how-to-hide-soft-keyboard-on-android-after-clicking-outside-edittext?page=2&tab=votes#tab-top
-        //
-        etxtNote.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        editTxtNote.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
 
@@ -125,7 +123,7 @@ public class CountryEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), CountryEditActivity.class);
-                intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic().getValue());
+                intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic());
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -137,9 +135,10 @@ public class CountryEditActivity extends AppCompatActivity {
         imgFlagIcon.setImageResource(countryStatistic.FlagIconId);
         txtCountry.setText(countryStatistic.Country);
         txtRating.setText(String.format("%.1f", countryStatistic.Rating));
+        editTxtNote.setText(countryStatistic.Note);
     }
 
-
+    // see setFocusChanged note on editText View
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {

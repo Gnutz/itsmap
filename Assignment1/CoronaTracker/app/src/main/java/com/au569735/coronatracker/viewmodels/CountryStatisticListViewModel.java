@@ -38,19 +38,22 @@ public class CountryStatisticListViewModel extends AndroidViewModel {
         return getStatisticsLiveData().getValue();
     }
 
-    void updateStatistics(ArrayList<CountryStatistic> newList){
-        countryStatistics.setValue(newList);
-    }
-
-    public  void updateStatistic(CountryStatistic updatedStats){
+    public  void updateStatistic(final CountryStatistic updatedStats){
+        //update the underlying ArrayList
         ArrayList<CountryStatistic> statistics = getStatistics();
         int index = getIndexByCountry(statistics, updatedStats.Country);
         statistics.set(index, updatedStats);
+
+        //update the LiveData instance with modified list
         updateStatistics(statistics);
     }
 
+    private void updateStatistics(ArrayList<CountryStatistic> newList){
+        countryStatistics.setValue(newList);
+    }
+
     private int getIndexByCountry(ArrayList<CountryStatistic> statistics, String country) {
-        for (CountryStatistic stats : statistics) {
+        for (CountryStatistic stats : getStatistics()) {
             if (stats.Country.toUpperCase().equals(country.toUpperCase())) {
                 return statistics.indexOf(stats);
             }
@@ -59,8 +62,7 @@ public class CountryStatisticListViewModel extends AndroidViewModel {
         return -1;
     }
 
-
-    ArrayList<CountryStatistic> LoadData() {
+    private ArrayList<CountryStatistic> LoadData() {
         ArrayList<CountryStatistic> statistics = new ArrayList<>();
 
         InputStream inputStream = application.getResources().openRawResource(R.raw.corona_stats);

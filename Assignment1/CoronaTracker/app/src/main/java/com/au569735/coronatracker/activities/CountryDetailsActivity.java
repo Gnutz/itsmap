@@ -30,7 +30,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_country_details);
 
         vm = new ViewModelProvider(this).get(CountryStatisticViewModel.class);
-        vm.getCountryStatistic().observe(this, new Observer<CountryStatistic>() {
+        vm.getCountryStatisticLiveData().observe(this, new Observer<CountryStatistic>() {
             @Override
             public void onChanged(CountryStatistic newStats) {
                     updateUI(newStats);
@@ -63,7 +63,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                Intent intent = new Intent(getApplication(), CountryEditActivity.class);
-               intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic().getValue());
+               intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic());
                intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                startActivity(intent);
                finish();
