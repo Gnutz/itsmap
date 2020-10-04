@@ -1,4 +1,4 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.adaptors;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.au569735.coronatracker.R;
+import com.au569735.coronatracker.model.CountryStatistic;
 
 import java.util.ArrayList;
 
@@ -27,7 +30,7 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
         this.listener = listener;
     }
 
-    void updateCStatistics(ArrayList<CountryStatistic> newStats){
+    public void updateStatistics(ArrayList<CountryStatistic> newStats){
         countryStatistics = newStats;
         notifyDataSetChanged();
     }

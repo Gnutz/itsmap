@@ -1,9 +1,8 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +19,12 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class EditContryStatActivity extends AppCompatActivity {
+import com.au569735.coronatracker.R;
+import com.au569735.coronatracker.model.CountryStatistic;
+import com.au569735.coronatracker.utils.Constants;
+import com.au569735.coronatracker.viewmodels.CountryStatisticViewModel;
+
+public class CountryEditActivity extends AppCompatActivity {
 
     ImageView imgFlagIcon;
     TextView txtCountry, txtRating;
@@ -120,7 +124,7 @@ public class EditContryStatActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), EditContryStatActivity.class);
+                Intent intent = new Intent(getApplication(), CountryEditActivity.class);
                 intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic().getValue());
                 setResult(RESULT_OK, intent);
                 finish();

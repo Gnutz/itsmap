@@ -1,4 +1,4 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.au569735.coronatracker.Constants.REQUEST_EDIT;
+import com.au569735.coronatracker.viewmodels.CountryStatisticViewModel;
+import com.au569735.coronatracker.R;
+import com.au569735.coronatracker.model.CountryStatistic;
+import com.au569735.coronatracker.utils.Constants;
 
 public class CountryDetailsActivity extends AppCompatActivity {
 
@@ -59,7 +62,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               Intent intent = new Intent(getApplication(), EditContryStatActivity.class);
+               Intent intent = new Intent(getApplication(), CountryEditActivity.class);
                intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic().getValue());
                intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                startActivity(intent);

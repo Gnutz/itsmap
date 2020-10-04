@@ -1,4 +1,4 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,17 +12,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.au569735.coronatracker.adaptors.CountryStatisticAdapter;
+import com.au569735.coronatracker.R;
+import com.au569735.coronatracker.model.CountryStatistic;
+import com.au569735.coronatracker.utils.Constants;
+import com.au569735.coronatracker.viewmodels.CountryStatisticListViewModel;
+
 import java.util.ArrayList;
 
-public class ListActivity extends AppCompatActivity
+public class CountryListActivity extends AppCompatActivity
 implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
-
-
 
     RecyclerView rcvCountryStats;
     Button btnExit;
     CountryStatisticAdapter adapter;
-
     CountryStatisticListViewModel vm;
 
     @Override
@@ -39,7 +42,7 @@ implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
         vm.getStatisticsLiveData().observe(this, new Observer<ArrayList<CountryStatistic>>() {
             @Override
             public void onChanged(ArrayList<CountryStatistic> countryStatistics) {
-                adapter.updateCStatistics(countryStatistics);
+                adapter.updateStatistics(countryStatistics);
             }
         });
 

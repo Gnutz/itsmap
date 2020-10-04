@@ -1,4 +1,4 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.utils;
 
 public class Constants {
 

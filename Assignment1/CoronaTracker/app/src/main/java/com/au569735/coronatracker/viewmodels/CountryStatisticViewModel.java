@@ -1,8 +1,10 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.viewmodels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.au569735.coronatracker.model.CountryStatistic;
 
 public class CountryStatisticViewModel extends ViewModel {
 

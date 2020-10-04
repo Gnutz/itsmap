@@ -1,4 +1,4 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.viewmodels;
 
 import android.app.Application;
 
@@ -6,6 +6,10 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.au569735.coronatracker.utils.CSVReader;
+import com.au569735.coronatracker.R;
+import com.au569735.coronatracker.model.CountryStatistic;
 
 import java.io.InputStream;
 import java.util.ArrayList;

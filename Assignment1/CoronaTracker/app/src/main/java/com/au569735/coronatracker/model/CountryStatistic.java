@@ -1,16 +1,16 @@
-package com.au569735.coronatracker;
+package com.au569735.coronatracker.model;
 
 import java.io.Serializable;
 
 public class CountryStatistic implements Serializable {
 
-    String Country;
-    String CountryCode;
-    int FlagIconId;
-    int Cases;
-    int Deaths;
-    double Rating;
-    String Note;
+    public String Country;
+    public String CountryCode;
+    public int FlagIconId;
+    public int Cases;
+    public int Deaths;
+    public double Rating;
+    public String Note;
 
     public CountryStatistic(String country, String code, int iconId, int cases, int deaths, double rating, String note){
         Country = country;

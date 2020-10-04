@@ -14,7 +14,9 @@
         android:layout_marginBottom="@dimen/margin_medium"
         app:layout_constraintBottom_toTopOf="@+id/btnExit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="8"
+        tools:listitem="@layout/list_country_stat_item" />
 
     <Button
         android:id="@+id/btnExit"
