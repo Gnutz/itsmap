@@ -1,5 +1,6 @@
 package com.au569735.coronatracker.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -85,9 +86,11 @@ public class CountryEditActivity extends AppCompatActivity {
         editTxtNote.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                CountryStatistic stats = vm.getCountryStatistic();
-                stats.Note = editTxtNote.getText().toString();
-                vm.updateCountryStatistic(stats);
+                if(!hasFocus) {
+                    CountryStatistic stats = vm.getCountryStatistic();
+                    stats.Note = editTxtNote.getText().toString();
+                    vm.updateCountryStatistic(stats);
+                }
             }
         });
 

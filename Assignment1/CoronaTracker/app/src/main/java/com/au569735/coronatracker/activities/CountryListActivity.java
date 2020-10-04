@@ -64,7 +64,7 @@ implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
 
     void launchDetailsActivity(int index){
         Intent intent = new Intent(this, CountryDetailsActivity.class);
-        intent.putExtra(Constants.STAT_BLOCK, vm.getStatisticsLiveData().getValue().get(index));
+        intent.putExtra(Constants.STAT_BLOCK, vm.getStatistics().get(index));
         startActivityForResult(intent, Constants.REQUEST_EDIT);
     }
 

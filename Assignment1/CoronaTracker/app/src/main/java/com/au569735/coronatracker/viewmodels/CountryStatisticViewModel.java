@@ -28,8 +28,11 @@ public class CountryStatisticViewModel extends ViewModel {
     }
 
     public void updateCountryStatistic(CountryStatistic countryStatistic) {
-        if (!countryStatistic.equals(getCountryStatistic()))
+        CountryStatistic currentStats = getCountryStatistic();
+        if (!countryStatistic.equals(currentStats)) {
             this.countryStatistic.setValue(countryStatistic);
+        }
+        currentStats = getCountryStatistic();
     }
 
 
