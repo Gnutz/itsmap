@@ -1,7 +1,4 @@
 package com.au569735.coronatracker.viewmodels;
-
-import android.os.Build;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
