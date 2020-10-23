@@ -7,40 +7,57 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorWidget">
 
             <TextView
                 android:id="@+id/txtItemCaseAndDeaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/txtItemCountry"
+                app:layout_constraintTop_toBottomOf="@+id/txtItemCountry"
                 tools:text="1000 / 10" />
 
             <TextView
                 android:id="@+id/txtItemCountry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imgItemFlagIcon"
+                app:layout_constraintTop_toTopOf="@+id/imgItemFlagIcon"
                 tools:text="Denmark" />
 
             <TextView
                 android:id="@+id/txtItemRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="342dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imgItemFlagIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgItemFlagIcon"
                 tools:text="7.5" />
 
             <ImageView
                 android:id="@+id/imgItemFlagIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/dk" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

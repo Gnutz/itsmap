@@ -10,4 +10,8 @@
         <item name="colorAccent">@color/colorWarmRed</item>
         <item name="android:textColorSecondary">#757575</item>
     </style>
+
+    <style name="customBackground">
+        <item name="android:background">#E3E3E3</item>
+    </style>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDefaultBackground"
     tools:context=".activities.CountryEditActivity">
 
     <ImageView
@@ -61,7 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEditUserRatingHeading" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEditUserRatingHeading"
+        app:tickMarkTint="@color/colorPrimaryDark" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -90,6 +92,9 @@
         android:hint="@string/note_hint"
         android:inputType="textShortMessage|textMultiLine|textCapSentences"
         android:textAlignment="textStart"
+        android:textColor="@color/colorTextColor"
+        android:textColorHighlight="@color/colorTextColor"
+        android:textColorHint="@color/colorTextColor"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btnOk"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@color/colorWidget"
         android:text="@android:string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -112,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@color/colorWidget"
         android:text="@android:string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
