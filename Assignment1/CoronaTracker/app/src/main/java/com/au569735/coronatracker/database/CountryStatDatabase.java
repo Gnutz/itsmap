@@ -13,7 +13,7 @@ import com.au569735.coronatracker.model.CountryStatistic;
 @Database(entities = {CountryStatistic.class}, version = 1,  exportSchema = false)
 public abstract class CountryStatDatabase extends RoomDatabase {
 
-    public abstract CountryStatisticDao CountryStatistic();
+    public abstract CountryStatisticDao CountryStatisticDao();
 
     static CountryStatDatabase instance;
 

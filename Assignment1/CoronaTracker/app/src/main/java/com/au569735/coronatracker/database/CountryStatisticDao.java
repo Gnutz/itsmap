@@ -21,10 +21,10 @@ public interface CountryStatisticDao {
     LiveData<List<CountryStatistic>> getAll();
 
     @Query("SELECT * FROM countrystatistic WHERE uid LIKE :uid LIMIT 1")
-    CountryStatistic findStatictic(int uid);
+    CountryStatistic findStatistic(int uid);
 
     @Query("SELECT * FROM countrystatistic WHERE country LIKE :country LIMIT 1")
-    CountryStatistic findStatitic(String country);
+    CountryStatistic findStatistic(String country);
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
