@@ -1,0 +1,178 @@
+[
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_no.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\no.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_in.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\in.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_country_stat.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout\\activity_edit_country_stat.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_activity_list.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout-land\\activity_list.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ca.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\ca.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_se.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\se.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout\\activity_list.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cn.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\cn.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_jp.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\jp.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_activity_edit_country_stat.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout-land\\activity_edit_country_stat.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\raw_corona_stats.csv.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\raw\\corona_stats.csv"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_country_stat_item.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout\\list_country_stat_item.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_country_details.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout\\activity_country_details.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_de.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\de.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ru.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\ru.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fi.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\fi.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dk.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\dk.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_activity_country_details.xml.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\layout-land\\activity_country_details.xml"
+    },
+    {
+        "merged": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_us.png.flat",
+        "source": "D:\\Semester7\\SMAP\\Lab\\Assignment2\\CoronaTracker\\app\\src\\main\\res\\drawable\\us.png"
+    }
+]

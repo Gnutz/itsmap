@@ -1,0 +1,4 @@
+#Sat Oct 24 14:20:12 CEST 2020
+base.0=D\:\\Semester7\\SMAP\\Lab\\Lecture6\\weatherapi\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
