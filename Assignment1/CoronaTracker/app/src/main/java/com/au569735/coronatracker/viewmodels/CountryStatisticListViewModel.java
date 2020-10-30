@@ -41,7 +41,7 @@ public class CountryStatisticListViewModel extends AndroidViewModel {
     public  void updateStatistic(final CountryStatistic updatedStats){
         //update the underlying ArrayList
         ArrayList<CountryStatistic> statistics = getStatistics();
-        int index = getIndexByCountry(statistics, updatedStats.Country);
+        int index = getIndexByCountry(statistics, updatedStats.getCountry());
         statistics.set(index, updatedStats);
 
         //update the LiveData instance with modified list
@@ -54,7 +54,7 @@ public class CountryStatisticListViewModel extends AndroidViewModel {
 
     private int getIndexByCountry(ArrayList<CountryStatistic> statistics, String country) {
         for (CountryStatistic stats : getStatistics()) {
-            if (stats.Country.toUpperCase().equals(country.toUpperCase())) {
+            if (stats.getCountry().toUpperCase().equals(country.toUpperCase())) {
                 return statistics.indexOf(stats);
             }
         }

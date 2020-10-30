@@ -64,7 +64,7 @@ implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
 
     void launchDetailsActivity(int index){
         Intent intent = new Intent(this, CountryDetailsActivity.class);
-        intent.putExtra(Constants.STAT_BLOCK, vm.getStatistics().get(index));
+        intent.putExtra(Constants.COUNTRY_ID, vm.getStatistics().get(index).getUid());
         startActivityForResult(intent, Constants.REQUEST_EDIT);
     }
 
@@ -73,7 +73,7 @@ implements CountryStatisticAdapter.ICountryStatisticItemClickedListener {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == RESULT_OK){
-            vm.updateStatistic((CountryStatistic) data.getSerializableExtra(Constants.STAT_BLOCK));
+            vm.updateStatistic((CountryStatistic) data.getSerializableExtra(Constants.COUNTRY_ID));
         }
 
     }

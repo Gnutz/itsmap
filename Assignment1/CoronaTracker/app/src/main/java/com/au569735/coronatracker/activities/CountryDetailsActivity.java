@@ -46,7 +46,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
 
         if(vm.getCountryStatistic() == null ) {
             Intent passedIntent = getIntent();
-            CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
+            CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.COUNTRY_ID);
             vm.updateCountryStatistic(countryStatistic);
         }
 
@@ -65,7 +65,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                Intent intent = new Intent(getApplication(), CountryEditActivity.class);
-               intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic());
+               intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
                intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                startActivity(intent);
                finish();
@@ -74,11 +74,11 @@ public class CountryDetailsActivity extends AppCompatActivity {
     }
 
     private void updateUI(CountryStatistic stats) {
-        imgFlagIcon.setImageResource(stats.FlagIconId);
-        txtCountry.setText(stats.Country);
-        txtCases.setText(""+ stats.Cases);
-        txtDeaths.setText(""+ stats.Deaths);
-        txtRating.setText(String.format("%.1f", stats.Rating));
-        txtNotes.setText(stats.Note);
+        imgFlagIcon.setImageResource(stats.getFlagIconId());
+        txtCountry.setText(stats.getCountry());
+        txtCases.setText(""+ stats.getCases());
+        txtDeaths.setText(""+ stats.getDeaths());
+        txtRating.setText(String.format("%.1f", stats.getRating()));
+        txtNotes.setText(stats.getNote());
     }
 }

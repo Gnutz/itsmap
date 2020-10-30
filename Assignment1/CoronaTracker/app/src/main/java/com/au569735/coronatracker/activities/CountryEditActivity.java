@@ -1,6 +1,5 @@
 package com.au569735.coronatracker.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -9,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -56,18 +53,18 @@ public class CountryEditActivity extends AppCompatActivity {
 
         if (vm.getCountryStatistic() == null) {
             Intent passedIntent = getIntent();
-            CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.STAT_BLOCK);
+            CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.COUNTRY_ID);
             vm.updateCountryStatistic(stats);
         }
 
 
         skbRating = findViewById(R.id.skbUserRating);
-        skbRating.setProgress((int) vm.getCountryStatistic().Rating * 10);
+        skbRating.setProgress((int) vm.getCountryStatistic().getRating() * 10);
         skbRating.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 CountryStatistic stats = vm.getCountryStatistic();
-                stats.Rating = (float) progress/10;
+                stats.setRating((float) progress/10);
                 vm.updateCountryStatistic(stats);
             }
 
@@ -91,7 +88,7 @@ public class CountryEditActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     CountryStatistic stats = vm.getCountryStatistic();
-                    stats.Note = editTxtNote.getText().toString();
+                    stats.setNote(editTxtNote.getText().toString());
                     vm.updateCountryStatistic(stats);
                 }
             }
@@ -112,7 +109,7 @@ public class CountryEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), CountryEditActivity.class);
-                intent.putExtra(Constants.STAT_BLOCK, vm.getCountryStatistic());
+                intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -121,10 +118,10 @@ public class CountryEditActivity extends AppCompatActivity {
     }
 
     private void updateUI(CountryStatistic countryStatistic) {
-        imgFlagIcon.setImageResource(countryStatistic.FlagIconId);
-        txtCountry.setText(countryStatistic.Country);
-        txtRating.setText(String.format("%.1f", countryStatistic.Rating));
-        editTxtNote.setText(countryStatistic.Note);
+        imgFlagIcon.setImageResource(countryStatistic.getFlagIconId());
+        txtCountry.setText(countryStatistic.getCountry());
+        txtRating.setText(String.format("%.1f", countryStatistic.getRating()));
+        editTxtNote.setText(countryStatistic.getNote());
     }
 
     // see setFocusChanged note on editText View

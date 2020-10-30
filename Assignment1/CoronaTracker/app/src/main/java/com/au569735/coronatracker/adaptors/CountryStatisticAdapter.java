@@ -52,10 +52,10 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
     public void onBindViewHolder(@NonNull CountyStatisticViewHolder holder, int position) {
 
         CountryStatistic stats = countryStatistics.get(position);
-        holder.txtCountry.setText(stats.Country);
-        holder.txtCasesAndDeaths.setText("" + stats.Cases + " / " + stats.Deaths);
-        holder.txtRating.setText(String.format("%.1f", stats.Rating));
-        holder.imgFlag.setImageResource(stats.FlagIconId);
+        holder.txtCountry.setText(stats.getCountry());
+        holder.txtCasesAndDeaths.setText("" + stats.getCases() + " / " + stats.getDeaths());
+        holder.txtRating.setText(String.format("%.1f", stats.getRating()));
+        holder.imgFlag.setImageResource(stats.getFlagIconId());
 
     }
 
