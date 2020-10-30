@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.au569735.coronatracker.utils.CSVReader;
 import com.au569735.coronatracker.R;
@@ -15,7 +16,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CountryStatisticListViewModel extends AndroidViewModel {
+public class CountryStatisticListViewModel extends ViewModel {
 
     private MutableLiveData<ArrayList<CountryStatistic>> countryStatistics;
     private Application application;
@@ -60,27 +61,6 @@ public class CountryStatisticListViewModel extends AndroidViewModel {
         }
 
         return -1;
-    }
-
-    private ArrayList<CountryStatistic> LoadData() {
-        ArrayList<CountryStatistic> statistics = new ArrayList<>();
-
-        InputStream inputStream = application.getResources().openRawResource(R.raw.corona_stats);
-        CSVReader csvReader = new CSVReader(inputStream);
-        List<String[]> statsList = csvReader.read();
-
-        for (String[] statLine : statsList) {
-            String country = statLine[0];
-            String countryCode = statLine[1];
-            int flagId = application.getResources().getIdentifier(countryCode.toLowerCase(),
-                    "drawable", getApplication().getPackageName());
-            int cases = Integer.parseInt(statLine[2]);
-            int deaths = Integer.parseInt(statLine[3]);
-
-            statistics.add(new CountryStatistic(country, countryCode, flagId, cases, deaths, 5.0, ""));
-        }
-
-        return statistics;
     }
 }
 
