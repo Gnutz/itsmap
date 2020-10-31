@@ -13,6 +13,7 @@ import com.au569735.coronatracker.R;
 import com.au569735.coronatracker.model.CountryStatistic;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /* reference */
 // The implementation of this adaptor is adapted from the code shown in the video "Demo 2: RecyclerView in action"
@@ -28,14 +29,14 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
 
     ICountryStatisticItemClickedListener listener;
 
-    ArrayList<CountryStatistic> countryStatistics;
+    List<CountryStatistic> countryStatistics = new ArrayList<CountryStatistic>();
 
 
     public CountryStatisticAdapter(ICountryStatisticItemClickedListener listener){
         this.listener = listener;
     }
 
-    public void updateStatistics(ArrayList<CountryStatistic> newStats){
+    public void updateStatistics(List<CountryStatistic> newStats){
         countryStatistics = newStats;
         notifyDataSetChanged();
     }

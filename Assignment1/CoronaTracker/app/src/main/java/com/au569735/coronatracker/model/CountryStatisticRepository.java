@@ -28,33 +28,18 @@ public class CountryStatisticRepository {
     ExecutorService executorService;
     LiveData<List<CountryStatistic>> statistics;
 
-    CountryStatisticRepository instance;
+    static CountryStatisticRepository instance;
 
     public static CountryStatisticRepository getInstance(final Application application){
-        if(i == null){
+        if(instance  == null){
             synchronized (CountryStatDatabase.class){
                 if(instance == null){
-                    instance = Room.databaseBuilder(context_,
-                            CountryStatDatabase.class, "country_stat_database")
-                            .fallbackToDestructiveMigration()
-                            .addCallback(new RoomDatabase.Callback() {
-                                @Override
-                                public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                                    super.onCreate(db);
-                                    Executors.newSingleThreadExecutor().execute(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            instance.CountryStatisticDao().addAll(
-                                                    CountryStatDatabase.LoadseedData()
-                                            );
-                                        }
-                                    });
-                                }
-                            })
-                            .build();
+                    instance =  new CountryStatisticRepository(application);
                 }
             }
         }
+        return instance;
+    }
 
 
     private CountryStatisticRepository(Application application) {

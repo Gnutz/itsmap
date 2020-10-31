@@ -1,13 +1,27 @@
 package com.au569735.coronatracker.viewmodels;
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.au569735.coronatracker.model.CountryStatistic;
+import com.au569735.coronatracker.model.CountryStatisticRepository;
 
-public class CountryStatisticViewModel extends ViewModel {
+public class CountryStatisticEditViewModel extends AndroidViewModel {
 
     MutableLiveData<CountryStatistic> countryStatistic;
+    CountryStatisticRepository repository;
+
+    public CountryStatisticEditViewModel(@NonNull Application application) {
+        super(application);
+
+        repository = CountryStatisticRepository.getInstance(application);
+    }
+
+
 
     public LiveData<CountryStatistic> getCountryStatisticLiveData() {
         if (countryStatistic == null){
@@ -29,8 +43,11 @@ public class CountryStatisticViewModel extends ViewModel {
         if (!countryStatistic.equals(currentStats)) {
             this.countryStatistic.setValue(countryStatistic);
         }
-        currentStats = getCountryStatistic();
     }
 
 
+    public void selectStatisticById(int statisticId) {
+        CountryStatistic selectedStats = repository.getStatisticAsynch(statisticId);
+        this.countryStatistic.setValue(selectedStats);
+    }
 }

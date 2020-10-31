@@ -43,7 +43,7 @@ public abstract class CountryStatDatabase extends RoomDatabase {
                                     Executors.newSingleThreadExecutor().execute(new Runnable() {
                                         @Override
                                         public void run() {
-                                            instance.CountryStatisticDao().addAll(
+                                           instance.CountryStatisticDao().addAll(
                                                     CountryStatDatabase.LoadseedData()
                                             );
                                         }

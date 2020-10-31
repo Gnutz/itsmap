@@ -90,6 +90,7 @@ public class CountryStatistic {
     }
 
     public CountryStatistic(CountryStatistic other){
+        this.uid = other.uid;
         this.country = other.country;
         this.countryCode = other.countryCode;
         this.flagIconId = other.flagIconId;

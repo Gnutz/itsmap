@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.au569735.coronatracker.R;
 import com.au569735.coronatracker.model.CountryStatistic;
 import com.au569735.coronatracker.utils.Constants;
-import com.au569735.coronatracker.viewmodels.CountryStatisticViewModel;
+import com.au569735.coronatracker.viewmodels.CountryStatisticEditViewModel;
 
 public class CountryEditActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class CountryEditActivity extends AppCompatActivity {
     EditText editTxtNote;
     Button btnCancel, btnOk;
 
-    CountryStatisticViewModel vm;
+    CountryStatisticEditViewModel vm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class CountryEditActivity extends AppCompatActivity {
         txtRating = findViewById(R.id.txtEditUserRating);
         editTxtNote = findViewById(R.id.editTxtUserNotes);
 
-        vm = new ViewModelProvider(this).get(CountryStatisticViewModel.class);
+        vm = new ViewModelProvider(this).get(CountryStatisticEditViewModel.class);
         vm.getCountryStatisticLiveData().observe(this, new Observer<CountryStatistic>() {
             @Override
             public void onChanged(CountryStatistic countryStatistic) {
@@ -50,13 +50,11 @@ public class CountryEditActivity extends AppCompatActivity {
             }
         });
 
-
-        if (vm.getCountryStatistic() == null) {
+        if(vm.getCountryStatistic() == null ) {
             Intent passedIntent = getIntent();
-            CountryStatistic stats = (CountryStatistic) passedIntent.getSerializableExtra(Constants.COUNTRY_ID);
-            vm.updateCountryStatistic(stats);
+            int statisticId = passedIntent.getIntExtra(Constants.COUNTRY_ID, -1);
+            vm.selectStatisticById(statisticId);
         }
-
 
         skbRating = findViewById(R.id.skbUserRating);
         skbRating.setProgress((int) vm.getCountryStatistic().getRating() * 10);
@@ -105,13 +103,19 @@ public class CountryEditActivity extends AppCompatActivity {
         });
 
         btnOk = findViewById(R.id.btnOk);
-        btnOk.setOnClickListener(new View.OnClickListener() {
+        /*btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), CountryEditActivity.class);
                 intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
                 setResult(RESULT_OK, intent);
                 finish();
+            }
+        }); */
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

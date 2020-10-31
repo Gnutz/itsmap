@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.au569735.coronatracker.viewmodels.CountryStatisticViewModel;
+import com.au569735.coronatracker.viewmodels.CountryStatisticDetailViewModel;
+import com.au569735.coronatracker.viewmodels.CountryStatisticEditViewModel;
 import com.au569735.coronatracker.R;
 import com.au569735.coronatracker.model.CountryStatistic;
 import com.au569735.coronatracker.utils.Constants;
@@ -22,14 +23,14 @@ public class CountryDetailsActivity extends AppCompatActivity {
     TextView txtCountry, txtCases, txtDeaths, txtRating, txtNotes;
     Button btnBack, btnEdit;
 
-    CountryStatisticViewModel vm;
+    CountryStatisticDetailViewModel vm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_details);
 
-        vm = new ViewModelProvider(this).get(CountryStatisticViewModel.class);
+        vm = new ViewModelProvider(this).get(CountryStatisticDetailViewModel.class);
         vm.getCountryStatisticLiveData().observe(this, new Observer<CountryStatistic>() {
             @Override
             public void onChanged(CountryStatistic newStats) {
@@ -46,8 +47,8 @@ public class CountryDetailsActivity extends AppCompatActivity {
 
         if(vm.getCountryStatistic() == null ) {
             Intent passedIntent = getIntent();
-            CountryStatistic countryStatistic = (CountryStatistic) passedIntent.getSerializableExtra(Constants.COUNTRY_ID);
-            vm.updateCountryStatistic(countryStatistic);
+            int statisticId = passedIntent.getIntExtra(Constants.COUNTRY_ID, -1);
+            vm.selectStatisticById(statisticId);
         }
 
         btnBack = findViewById(R.id.btnBack);
@@ -66,7 +67,6 @@ public class CountryDetailsActivity extends AppCompatActivity {
 
                Intent intent = new Intent(getApplication(), CountryEditActivity.class);
                intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
-               intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                startActivity(intent);
                finish();
             }
