@@ -79,6 +79,8 @@ public class CountryStatistic {
         this.note = note;
     }
 
+    public String getImage() { return "https://www.countryflags.io/" + countryCode.toLowerCase() + "/flat/64.png";}
+
     public CountryStatistic(String country, String countryCode, int flagIconId, int cases, int deaths, double rating, String note) {
         this.country = country;
         this.countryCode = countryCode;

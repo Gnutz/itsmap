@@ -17,6 +17,7 @@ import com.au569735.coronatracker.viewmodels.CountryStatisticEditViewModel;
 import com.au569735.coronatracker.R;
 import com.au569735.coronatracker.model.CountryStatistic;
 import com.au569735.coronatracker.utils.Constants;
+import com.bumptech.glide.Glide;
 
 public class CountryDetailsActivity extends AppCompatActivity {
 
@@ -88,7 +89,10 @@ public class CountryDetailsActivity extends AppCompatActivity {
     }
 
     private void updateUI(CountryStatistic stats) {
-        imgFlagIcon.setImageResource(stats.getFlagIconId());
+        Glide.with(imgFlagIcon.getContext())
+                .load(stats.getImage())
+                .placeholder(R.drawable.placeholder)
+                .into(imgFlagIcon);
         txtCountry.setText(stats.getCountry());
         txtCases.setText(""+ stats.getCases());
         txtDeaths.setText(""+ stats.getDeaths());

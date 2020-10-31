@@ -1,5 +1,6 @@
 package com.au569735.coronatracker.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.au569735.coronatracker.R;
 import com.au569735.coronatracker.model.CountryStatistic;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,8 @@ import java.util.List;
 
 public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatisticAdapter.CountyStatisticViewHolder> {
 
+
+    private static final String TAG = "TEST";
 
     public interface ICountryStatisticItemClickedListener {
         void onStatItemClicked(int index);
@@ -56,7 +60,11 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
         holder.txtCountry.setText(stats.getCountry());
         holder.txtCasesAndDeaths.setText("" + stats.getCases() + " / " + stats.getDeaths());
         holder.txtRating.setText(String.format("%.1f", stats.getRating()));
-        holder.imgFlag.setImageResource(stats.getFlagIconId());
+        Glide.with(holder.imgFlag.getContext())
+                .load(countryStatistics.get(position).getImage())
+                .placeholder(R.drawable.placeholder)
+                .into(holder.imgFlag);
+        Log.d(TAG, "Current country added to the database: " + stats.getImage());
 
     }
 

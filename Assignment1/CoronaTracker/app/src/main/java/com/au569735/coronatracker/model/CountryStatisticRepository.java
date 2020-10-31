@@ -21,9 +21,6 @@ import java.util.concurrent.Future;
 
 public class CountryStatisticRepository {
 
-
-
-
     CountryStatDatabase database;
     ExecutorService executorService;
     LiveData<List<CountryStatistic>> statistics;
