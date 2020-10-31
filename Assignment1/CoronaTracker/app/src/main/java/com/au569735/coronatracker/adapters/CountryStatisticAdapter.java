@@ -61,10 +61,10 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
         holder.txtCasesAndDeaths.setText("" + stats.getCases() + " / " + stats.getDeaths());
         holder.txtRating.setText(String.format("%.1f", stats.getRating()));
         Glide.with(holder.imgFlag.getContext())
-                .load(countryStatistics.get(position).getImage())
+                .load(stats.getImage())
                 .placeholder(R.drawable.placeholder)
                 .into(holder.imgFlag);
-        Log.d(TAG, "Current country added to the database: " + stats.getImage());
+        Log.d(TAG, "img url: " + stats.getImage());
 
     }
 
