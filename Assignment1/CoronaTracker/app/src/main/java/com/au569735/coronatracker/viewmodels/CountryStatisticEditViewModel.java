@@ -45,6 +45,10 @@ public class CountryStatisticEditViewModel extends AndroidViewModel {
         }
     }
 
+    public void updateCountryStatisticOnDatabase(CountryStatistic countryStatistic) {
+        repository.updateStatisticAsynch(countryStatistic);
+    }
+
 
     public void selectStatisticById(int statisticId) {
         CountryStatistic selectedStats = repository.getStatisticAsynch(statisticId);

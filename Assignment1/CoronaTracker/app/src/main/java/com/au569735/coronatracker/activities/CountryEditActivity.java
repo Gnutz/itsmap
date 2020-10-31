@@ -29,7 +29,6 @@ public class CountryEditActivity extends AppCompatActivity {
     SeekBar skbRating;
     EditText editTxtNote;
     Button btnCancel, btnOk;
-
     CountryStatisticEditViewModel vm;
 
     @Override
@@ -103,19 +102,12 @@ public class CountryEditActivity extends AppCompatActivity {
         });
 
         btnOk = findViewById(R.id.btnOk);
-        /*btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), CountryEditActivity.class);
-                intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
-                setResult(RESULT_OK, intent);
-                finish();
-            }
-        }); */
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                vm.updateCountryStatisticOnDatabase(vm.getCountryStatistic());
+                setResult(RESULT_OK);
+                finish();
             }
         });
 
