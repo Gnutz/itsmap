@@ -1,4 +1,4 @@
-package com.au569735.coronatracker.adaptors;
+package com.au569735.coronatracker.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

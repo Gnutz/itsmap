@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.au569735.coronatracker.viewmodels.CountryStatisticDetailViewModel;
 import com.au569735.coronatracker.viewmodels.CountryStatisticEditViewModel;
@@ -21,7 +22,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
 
     ImageView imgFlagIcon;
     TextView txtCountry, txtCases, txtDeaths, txtRating, txtNotes;
-    Button btnBack, btnEdit;
+    Button btnBack, btnEdit, btnDelete;
 
     CountryStatisticDetailViewModel vm;
 
@@ -38,6 +39,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
             }
         });
 
+        //widgets
         imgFlagIcon = findViewById(R.id.imgDetailFlagIcon);
         txtCountry = findViewById(R.id.txtCDetailCountryName);
         txtCases = findViewById(R.id.txtDetailCases);
@@ -69,6 +71,18 @@ public class CountryDetailsActivity extends AppCompatActivity {
                intent.putExtra(Constants.COUNTRY_ID, vm.getCountryStatistic().getUid());
                startActivity(intent);
                finish();
+            }
+        });
+
+        btnDelete  = findViewById(R.id.btnDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CountryStatistic currentStatistic = vm.getCountryStatistic();
+                vm.deleteStatistic(vm.getCountryStatistic());
+                finish();
+                Toast.makeText(getApplicationContext(), ""+currentStatistic.getCountry() +" has been removed", Toast.LENGTH_LONG)
+                        .show();
             }
         });
     }

@@ -39,4 +39,8 @@ public class CountryStatisticDetailViewModel extends AndroidViewModel {
         CountryStatistic selectedStats = repository.getStatisticAsynch(statisticId);
         this.countryStatistic.setValue(selectedStats);
     }
+
+    public void deleteStatistic(CountryStatistic statistic){
+        repository.deleteStatisticAsynch(statistic);
+    }
 }
