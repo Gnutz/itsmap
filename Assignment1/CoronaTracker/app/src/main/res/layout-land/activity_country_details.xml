@@ -7,6 +7,17 @@
     android:background="@color/colorDefaultBackground"
     tools:context=".activities.CountryDetailsActivity">
 
+    <Button
+        android:id="@+id/btnDelete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorWidget"
+        android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
+        app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
     <ImageView
         android:id="@+id/imgDetailFlagIcon"
         android:layout_width="wrap_content"

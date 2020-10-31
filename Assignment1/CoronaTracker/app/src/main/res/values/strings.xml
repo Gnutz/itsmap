@@ -10,4 +10,7 @@
     <string name="user_notes">User notes:</string>
     <string name="note_hint">Enter a note here</string>
     <string name="dev_note_standin" translatable="false">XXX XX XXXXXX XXXX XX XXXXXX XX X. XXXX XX XXXXXX XXXXXXX XX X</string>
+    <string name="search">Search here</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
 </resources>
